@@ -44,7 +44,12 @@ public class Subject : ISubject
 
     public void NotifyObservers()
     {
-        Console.WriteLine($"Product Name: {ProductName}, " +
-                          $"Product Price: {ProductPrice} is now available. So notifying all Registered users");
+        Console.WriteLine("Notifying all Registered users");
+        Console.WriteLine();
+        
+        foreach (var observer in _observers)
+        {
+            observer.Update(Availability);
+        }
     }
 }
