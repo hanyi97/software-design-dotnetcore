@@ -7,9 +7,18 @@ namespace SOLID.LSP.Improved;
 /// and it will behave the same way, getting the colour of the appropriate
 /// car.
 /// </summary>
-internal abstract class Car
+
+internal abstract class Vehicle
 {
     public abstract string GetColour();
+}
+
+internal abstract class Car : Vehicle
+{
+}
+
+internal abstract class Motorcycle : Vehicle
+{
 }
 
 internal class BMW : Car
