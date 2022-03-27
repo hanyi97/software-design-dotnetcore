@@ -6,23 +6,23 @@ public class DecoratorClient : ClientTemplate
 
     public override void RunClient()
     {
-        ICar bmwCar1 = new BMWCar();
+        var bmwCar1 = new BMWCar();
         bmwCar1.ManufactureCar();
         Console.WriteLine(bmwCar1);
         Console.WriteLine();
 
-        DieselCarDecorator carWithDieselEngine = new DieselCarDecorator(bmwCar1);
+        var carWithDieselEngine = new DieselCarDecorator(bmwCar1);
         carWithDieselEngine.ManufactureCar();
         
         Console.WriteLine();
         
-        ICar bmwCar2 = new BMWCar();
-        PetrolCarDecorator carWithPetrolEngine = new PetrolCarDecorator(bmwCar2);
+        var bmwCar2 = new BMWCar();
+        var carWithPetrolEngine = new PetrolCarDecorator(bmwCar2);
         carWithPetrolEngine.ManufactureCar();
 
         Console.WriteLine();
         
-        ConvertableCarDecorator convertableCar = new ConvertableCarDecorator(bmwCar2);
+        var convertableCar = new ConvertableCarDecorator(bmwCar2);
         convertableCar.ManufactureCar();
     }
 }
