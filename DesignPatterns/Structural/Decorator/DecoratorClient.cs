@@ -11,14 +11,18 @@ public class DecoratorClient : ClientTemplate
         Console.WriteLine(bmwCar1);
         Console.WriteLine();
 
-        var carWithDieselEngine = new DieselCarDecorator(bmwCar1);
+        DieselCarDecorator carWithDieselEngine = new DieselCarDecorator(bmwCar1);
         carWithDieselEngine.ManufactureCar();
         
         Console.WriteLine();
         
         ICar bmwCar2 = new BMWCar();
-        
-        var carWithPetrolEngine = new PetrolCarDecorator(bmwCar2);
+        PetrolCarDecorator carWithPetrolEngine = new PetrolCarDecorator(bmwCar2);
         carWithPetrolEngine.ManufactureCar();
+
+        Console.WriteLine();
+        
+        ConvertableCarDecorator convertableCar = new ConvertableCarDecorator(bmwCar2);
+        convertableCar.ManufactureCar();
     }
 }

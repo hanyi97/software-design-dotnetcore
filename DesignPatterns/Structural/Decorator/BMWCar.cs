@@ -8,10 +8,12 @@ public class BMWCar : ICar
     public string CarWheels { get; set; }
     public string CarGlass { get; set; }
     public string Engine { get; set; }
+    public string Type { get; set; }
 
     public override string ToString()
     {
-        return $"BMWCar [CarName={CarName}, CarBody={CarBody}, CarDoor={CarDoor}, CarWheels={CarWheels}, CarGlass={CarGlass}, Engine={Engine}]";
+        return $"BMWCar [CarName={CarName}, CarBody={CarBody}, CarDoor={CarDoor}, CarWheels={CarWheels}," +
+               $" CarGlass={CarGlass}, Engine={Engine}, Type={Type}]";
     }
     
     public ICar ManufactureCar()
